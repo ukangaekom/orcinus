@@ -8,13 +8,41 @@
 
 
 ## Contents
-1. **Problem Statement and Project Overview**
-2. **About**
-3. **Technical Architecture and Technologies**
-4. **Capabilities**
-5. **Videos, Tutorials, Test and Demos**
-6. **Testing Locally**
-7. **API Details**
-8. **Team and Social Media Handles**
+- [**Introduction**](#introduction)
+- [**About**](#About)
+- [**Technicals**](#Technicals)
+- [**Usecase**](#Usecase)
+- [**Demo**](#Demo)
+- [**Testing**](#Testing)
+- [**Accessibility**](#Accessiblity)
+- [**Team**](#Team)
+- [**Links**](#Links)
 
-Sei Orcinus is an agentic api for getting real time crypto data on sei network. 
+
+
+## Introduction
+Sei Orcinus is an agentic api for getting real time crypto data on sei network.
+
+
+## About
+
+## Technicals
+
+## Usecases
+
+
+## Demos
+
+
+## Testing
+
+## Accessibility
+
+
+## Team
+
+
+
+
+
+
