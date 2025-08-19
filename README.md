@@ -1,4 +1,4 @@
-# Scroll Magic Book
+# Sei Orcinus 🐋
 
 ![Agent Image](./public/sei_orcinus.jpg)
 
