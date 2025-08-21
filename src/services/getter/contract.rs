@@ -1,4 +1,10 @@
-
+use alloy::{
+    primitives::{Address},
+    providers::Provider,
+    sol
+};
+use std::str::FromStr;
+use crate::connection::provider::{init_sei_mainnet, init_sei_testnet};
 
 sol!(
     #[sol(rpc)]
@@ -59,23 +65,26 @@ sol!(
 
 // CHECKING ADDRESS
 
-pub async fn check_address_testnet(address: &str) -> String{
+// pub async fn check_address_testnet(address: &str) -> String{
     
-    provider = init_sei_testnet().await;
+//     let provider = init_sei_testnet().await;
+
+//     let addr = Address::from_str(nft_address).expect("REASON");
 
 
-    return "address".as_str();
 
-}
+//     return "address".to_string();
+
+// }
 
 
-pub async fn check_address_mainnet(address: &str) -> String{
+// pub async fn check_address_mainnet(address: &str) -> String{
 
-    provider = init_sei_mainnet().await;
+//     let provider = init_sei_mainnet().await;
 
-    return "address".as_str();
+//     return "address".to_string();
 
-}
+// }
 
 
 
