@@ -61,14 +61,19 @@ sol!(
 
 pub async fn check_address_testnet(address: &str) -> String{
     
-    provider = init_sei_testnet().await;;
+    provider = init_sei_testnet().await;
+
+
+    return "address".as_str();
 
 }
 
 
 pub async fn check_address_mainnet(address: &str) -> String{
 
-    provider = init_sei_mainnet().await;;
+    provider = init_sei_mainnet().await;
+
+    return "address".as_str();
 
 }
 
