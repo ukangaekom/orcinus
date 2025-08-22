@@ -26,7 +26,7 @@ async fn main(){
 
 
     // Define Ip and Port
-    let address: &'static str = "0.0.0.0:6570";
+    let address: &'static str = "0.0.0.0:8080";
     let listener: TcpListener = tokio::net::TcpListener::bind(address).await.unwrap();
 
 
