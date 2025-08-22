@@ -1,3 +1,16 @@
+use alloy::{providers::Provider,
+primitives::Address,sol};
+
+sol! {
+    #[sol(rpc)]
+    interface IERC165 {
+        function supportsInterface(bytes4 interfaceId) external view returns (bool);
+    }
+}
+
+
+// FUNCTION IMPLEMENTATIONS
+
 
 pub fn extract_tool_params(input: &str) -> Option<(String, Vec<String>)> {
     // Find the part inside the brackets
@@ -13,3 +26,31 @@ pub fn extract_tool_params(input: &str) -> Option<(String, Vec<String>)> {
 
     Some((first, rest))
 }
+
+
+
+
+
+// NFT VERIFYING FUNCTIONS
+
+pub async fn is_ERC721_nft_contract(provider: &impl Provider, addr: Address) -> bool {
+    let erc165 = IERC165::new(addr, provider);
+
+    if let Ok(result) = erc165.supportsInterface([0x80, 0xac, 0x58, 0xcd].into()).call().await {
+        if result { return true; }
+    }
+    false
+}
+
+
+pub async fn is_ERC1155_nft_contract(provider: &impl Provider, addr: Address) -> bool {
+    let erc165 = IERC165::new(addr, provider);
+    if let Ok(result) = erc165.supportsInterface([0xd9, 0xb6, 0x7a, 0x26].into()).call().await {
+        if result { return true; }
+    }
+    false
+}
+
+
+
+

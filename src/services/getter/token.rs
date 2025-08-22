@@ -5,6 +5,7 @@ use alloy::{
 };
 use std::str::FromStr;
 use crate::connection::provider::{init_sei_mainnet, init_sei_testnet};
+use crate::tools::utils::{is_ERC721_nft_contract, is_ERC1155_nft_contract};
 
 
 
@@ -46,11 +47,10 @@ pub async fn get_token_total_supply_testnet(token_address:&str) -> String {
                 let symbol = erc20.symbol().call().await.unwrap();
                 let totalsupply = erc20.totalSupply().call().await.unwrap();
 
-
                 return format!(
-                    "The Sei Testnet token name {:#?}, symbol: {:#?} and a total supply of {:#?}",name,symbol,totalsupply
+                    "The Sei Testnet token name {:#?}, symbol: 
+                    {:#?} and a total supply of {:#?}",name,symbol,totalsupply
                 );
-
             }
             Err(_e) => {
 
@@ -59,17 +59,12 @@ pub async fn get_token_total_supply_testnet(token_address:&str) -> String {
                     If it doesn't still exist, then its likely on another chain or doesn't exist",
                 token_addr)
 
-
             }
         }
-
-
-
     }else{
 
         return format!("{} is a wallet address",{token_addr});
-    }
-    
+    }    
 }
 
 
@@ -90,11 +85,9 @@ pub async fn get_token_total_supply_mainnet(token_address:&str) -> String {
                 let symbol = erc20.symbol().call().await.unwrap();
                 let totalsupply = erc20.totalSupply().call().await.unwrap();
 
-
                 return format!(
                     "token name {:#?}, symbol: {:#?} and a total supply of {:#?}",name,symbol,totalsupply
                 );
-
             }
             Err(_e) => {
 
@@ -102,8 +95,6 @@ pub async fn get_token_total_supply_mainnet(token_address:&str) -> String {
                     "The token address {:#?} doesn't exist on sei, check if it's an NFT or wallet.
                     If it doesn't still exist, then its likely on another chain or doesn't exist",
                 token_addr)
-
-
             }
         }
 
@@ -111,8 +102,7 @@ pub async fn get_token_total_supply_mainnet(token_address:&str) -> String {
 
         return format!("{} is a wallet address",{token_addr});
     }
-    
-    
+        
 }
 
 
@@ -138,9 +128,9 @@ pub async fn get_token_details_testnet(token_address:&str) -> String {
             let decimal = erc20.decimals().call().await.unwrap();
             let totalsupply = erc20.totalSupply().call().await.unwrap();
 
-
             return format!(
-                " The Sei Testnet The token name is {:#?} with name {:#?} having a decimal of {:#?} and total supply of {:#?}",
+                " The Sei Testnet The token name is {:#?} with name 
+                {:#?} having a decimal of {:#?} and total supply of {:#?}",
                 symbol, name,decimal,totalsupply );
 
         }
@@ -150,21 +140,12 @@ pub async fn get_token_details_testnet(token_address:&str) -> String {
                 "The token address {:#?} doesn't exist on The Sei Testnet, check if it's an NFT or wallet.
                 If it doesn't still exist, then its likely on another chain or doesn't exist",
             token_addr)
-
-
         }
-    
         }
-
-
     }else{
 
         return format!("{} is a wallet address",{token_addr});
     }
-
-
-    
-
 }
 
 
@@ -185,12 +166,10 @@ pub async fn get_token_details_mainnet(token_address:&str)-> String {
                 let decimal = erc20.decimals().call().await.unwrap();
                 let totalsupply = erc20.totalSupply().call().await.unwrap();
 
-
                 return format!(
                     "The token name is {:#?} with name {:#?} having a decimal of {:#?} 
                     and total supply of {:#?}",
                     symbol, name,decimal,totalsupply );
-
             }
             Err(_e) => {
 
@@ -199,18 +178,12 @@ pub async fn get_token_details_mainnet(token_address:&str)-> String {
                     If it doesn't still exist, then its likely on another chain or doesn't exist",
                 token_addr)
 
-
             }
         };
-        
-
-
     }else{
 
         return format!("{} is a wallet address",{token_addr});
-    }
-
-    
+    }  
 }
 
 
@@ -242,31 +215,20 @@ pub async fn get_token_balance_testnet(token_address:&str, wallet_address: &str)
                 let power:f32 = 10.0_f32.powi(decimal).into();
                 let token_balance: f32 = balance/power;
 
-                
                 return format!(
                     "The wallet {:#?} has a token balance of {:#?}{:#?}",wallet_addr,token_balance,symbol
                 );
-
             }
-
             Err(_e) => {
 
                 return format!(
                     "The token address {:#?} does not exist on Sei Testnet network",token_addr
                 );
             }
-
         }
-
-
     }else{
-
         return format!("{} is a wallet address",{token_addr});
-    }
-    
-    
-
-    
+    }    
 }
 
 
@@ -295,27 +257,18 @@ pub async fn get_token_balance_mainnet(token_address:&str, wallet_address: &str)
                 let power:f32 = 10.0_f32.powi(decimal).into();
                 let token_balance: f32 = balance/power;
 
-                
                 return format!(
                     "The wallet {:#?} has a token balance of {:#?}{:#?}",wallet_addr,token_balance,symbol
                 );
-
             }
-
             Err(_e) => {
-
                 return format!(
                     "The token address {:#?} does not exist on sei network",token_addr
                 );
             }
-
         }
-        
-
     }else{
 
         return format!("{} is a wallet address",{token_addr});
-    }
-
-    
+    }    
 }
