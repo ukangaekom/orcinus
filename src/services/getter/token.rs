@@ -35,13 +35,12 @@ pub async fn get_token_total_supply_testnet(token_address:&str) -> String {
     let provider = init_sei_testnet().await; 
     let token_addr =Address::from_str(token_address).expect("REASON");
 
-     let wallet = provider.get_code_at(token_addr).await;
+    let wallet = provider.get_code_at(token_addr).await;
 
     if !wallet.expect("REASONS").is_empty(){
 
         let erc20 = IERC20::new(token_addr,provider.clone());
         let name = erc20.name().call().await;
-        
         match name {
             Ok(name) => {
                 let symbol = erc20.symbol().call().await.unwrap();
@@ -120,12 +119,13 @@ pub async fn get_token_details_testnet(token_address:&str) -> String {
     if !wallet.expect("REASONS").is_empty(){
 
         let erc20 = IERC20::new(token_addr,provider.clone());
-        let name = erc20.name().call().await;
+        let decimal = erc20.decimals().call().await;
+       
 
-        match name {
-        Ok(name) => {
+        match  decimal {
+        Ok(decimal) => {
             let symbol = erc20.symbol().call().await.unwrap();
-            let decimal = erc20.decimals().call().await.unwrap();
+            let name = erc20.name().call().await.unwrap();
             let totalsupply = erc20.totalSupply().call().await.unwrap();
 
             return format!(
@@ -137,8 +137,7 @@ pub async fn get_token_details_testnet(token_address:&str) -> String {
         Err(_e) => {
 
             return format!(
-                "The token address {:#?} doesn't exist on The Sei Testnet, check if it's an NFT or wallet.
-                If it doesn't still exist, then its likely on another chain or doesn't exist",
+                "The token address {:#?} doesn't exist as a fungible token on The Sei Testnet, check if it's an NFT. If it doesn't still exist, then its likely on another chain or doesn't exist",
             token_addr)
         }
         }
@@ -158,12 +157,13 @@ pub async fn get_token_details_mainnet(token_address:&str)-> String {
 
     if !wallet.expect("REASONS").is_empty() {
         let erc20 = IERC20::new(token_addr,provider.clone());
-        let name = erc20.name().call().await;
+        let decimal = erc20.decimals().call().await;
+        
 
-        match name {
-            Ok(name) => {
+        match decimal {
+            Ok(decimal) => {
                 let symbol = erc20.symbol().call().await.unwrap();
-                let decimal = erc20.decimals().call().await.unwrap();
+                let name = erc20.name().call().await.unwrap();
                 let totalsupply = erc20.totalSupply().call().await.unwrap();
 
                 return format!(
@@ -174,7 +174,7 @@ pub async fn get_token_details_mainnet(token_address:&str)-> String {
             Err(_e) => {
 
                 return format!(
-                    "The token address {:#?} doesn't exist on sei, check if it's an NFT or wallet or .
+                    "The token address {:#?} doesn't exist as a fungible token on Sei, check if it's an NFT.
                     If it doesn't still exist, then its likely on another chain or doesn't exist",
                 token_addr)
 
@@ -222,7 +222,7 @@ pub async fn get_token_balance_testnet(token_address:&str, wallet_address: &str)
             Err(_e) => {
 
                 return format!(
-                    "The token address {:#?} does not exist on Sei Testnet network",token_addr
+                    "The token address {:#?} does not exist as a Fungible Token, Check if it's an NFT or a contract on Sei, else, it will likely be on another blockchain",token_addr
                 );
             }
         }

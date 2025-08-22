@@ -65,26 +65,41 @@ sol!(
 
 // CHECKING ADDRESS
 
-// pub async fn check_address_testnet(address: &str) -> String{
+pub async fn check_contract_testnet(address: &str) -> String{
     
-//     let provider = init_sei_testnet().await;
+    let provider = init_sei_testnet().await;
 
-//     let addr = Address::from_str(nft_address).expect("REASON");
-
-
-
-//     return "address".to_string();
-
-// }
+    let addr = Address::from_str(address).expect("REASON");
 
 
-// pub async fn check_address_mainnet(address: &str) -> String{
 
-//     let provider = init_sei_mainnet().await;
+    return "address".to_string();
 
-//     return "address".to_string();
+}
 
-// }
+
+pub async fn check_contract_mainnet(address: &str) -> String{
+
+    let provider = init_sei_mainnet().await;
+
+    let addr = Address::from_str(address).expect("REASON");
+
+    return "address".to_string();
+
+}
+
+
+pub async fn check_contract(address: &str) -> String{
+
+    let provider_testnet = init_sei_testnet().await;
+
+    let provider_mainnet = init_sei_mainnet().await;
+
+    let addr = Address::from_str(address).expect("REASON");
+
+    return "contract".to_string();
+
+}
 
 
 
