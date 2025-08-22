@@ -3,6 +3,12 @@ name = "scroll_magic_book"
 version = "0.1.0"
 edition = "2024"
 
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
 [dependencies]
 axum = { version = "0.8.4", features = ["http2", "macros", "ws"] }
 serde = { version = "1.0.219", features = ["derive"] }
