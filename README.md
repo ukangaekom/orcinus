@@ -124,7 +124,7 @@ Regarding Sei Orcinus Api accessibility, The api has been officially launched. Y
 
 [Victor Lawrence]()
 
-[Philemon Ndifreke]() - Media/BD Manager
+[Philemon Ndifreke](https://x.com/JohnPhilemon01) - Media/BD Manager
 
 
 
