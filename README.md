@@ -14,7 +14,7 @@
 - [**Usecase**](#Usecase)
 - [**Demo**](#Demo)
 - [**Testing**](#Testing)
-- [**Accessibility**](#Accessiblity)
+- [**Accessibility**](#Accessibility)
 - [**Team**](#Team)
 - [**Links**](#Links)
 
@@ -124,6 +124,7 @@ Go to you local postman use the endpoint `http://localhost:8080/sei_orcinus_agen
 
 ```
 Kindly send the request and get a response.
+
 
 ## Accessibility
 
