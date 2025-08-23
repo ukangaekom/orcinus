@@ -121,6 +121,14 @@ Regarding Sei Orcinus Api accessibility, The api has been officially launched. Y
 ## Team
 
 [Ekomabasi Ukanga](https://x.com/EkomUkanga) - Owner
+[Victor Lawrence]()
+[Philemon Ndifreke]() - Media/BD Manager
+
+
+
+
+## Links
+
 
 
 
