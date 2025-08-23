@@ -79,28 +79,31 @@ To run Sei Orcinus locally, simply clone the git repo, set your gemini api key a
 ### steps
 
 1. Clone git repo
-```
-
-```
-2. Create a .env file and add the following api keys.
-
 ```sh
-
-
+  git clone https://github.com/ukangaekom/orcinus.git
+```
+2. Create a .env file in the root directory and add the following api keys.
 
 ```
+  ALCHEMY_API_KEY=<ALCHEMY_API_KEY>
+  GEMINI_API_KEY=<GOOGLE_GEMINI_API_KEY>
+```
+
 3. Run cargo build
 ```sh
-
+  cargo build --release
 ```
 
 4. Run the Axum Api
-```
+```sh
+  cargo run --release
 
 ```
 
 5. Open you postman and follow the test format.
-**Note:**Use the json body type to send the request as the body type is strict.
+Go to you local postman use the endpoint `http://localhost:8080/sei_orcinus_agent` and use a post request method.
+
+**Note:** Use the json body type to send the request as the body type is strict.
 ```
 {
    "message":"<Your Message>",
@@ -109,13 +112,16 @@ To run Sei Orcinus locally, simply clone the git repo, set your gemini api key a
 }
 
 ```
+Kindly send the request and get a response.
 
 ## Accessibility
 
+Regarding Sei Orcinus Api accessibility, The api has been officially launched. You can message Ekomabasi Ukanga on [X](https://x.com/EkomUkanga) or [Telegram](https://t.me/Ekomart).
 
 ## Team
 
-[Ekomabasi Ukanga]() - Founder
+[Ekomabasi Ukanga](https://x.com/EkomUkanga) - Owner
+
 
 
 
