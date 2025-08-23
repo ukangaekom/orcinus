@@ -32,7 +32,7 @@ Sei Orcinus is an agentic api for getting real time crypto data on sei network.
   <img src="./public/SOA.jpg" alt="Agent Image" width="800" style="max-width: 100%;">
 </p>
 
-## Usecases
+## Usecase
 1. ### Explorers🌐🔍: 
   Sei orcinus can be integrated into blockchain explorers on sei blockchain and other blockchain associated with to give users a comprehensive onchain data report of a **wallet address**, **token addresss**, **nft address**, **contract address** or any address on sei blockahin *mainnet or testnet*. A user don't need to waste time🤷 trying to use the explorer interface. Just tell the agent what you want concerning an address and you get a comprehensive reponse.
   
@@ -54,7 +54,7 @@ Sei Orcinus is an agentic api for getting real time crypto data on sei network.
 
 
 
-## Demos
+## Demo
 The following images show case a real demo test of using sei orcinus agentic api.
 
 <p align="center">
