@@ -55,9 +55,60 @@ Sei Orcinus is an agentic api for getting real time crypto data on sei network.
 
 
 ## Demos
+The following images show case a real demo test of using sei orcinus agentic api.
+
+<p align="center">
+  <img src="./public/sei_orcinus_test_01.png" alt="Agent Image" width="800" style="max-width: 100%;">
+</p>
+
+<p align="center">
+  <img src="./public/sei_orcinus_test_02.png" alt="Agent Image" width="800" style="max-width: 100%;">
+</p>
+
+<p align="center">
+  <img src="./public/sei_orcinus_test.png" alt="Agent Image" width="800" style="max-width: 100%;">
+</p>
+
+<p align="center">
+  <img src="./public/sei_orcinus_test_advanced_test.png" alt="Agent Image" width="800" style="max-width: 100%;">
+</p>
 
 
 ## Testing
+To run Sei Orcinus locally, simply clone the git repo, set your gemini api key and alchemy api key before  running  `cargo build --release` and `cargo run --release`
+### steps
+
+1. Clone git repo
+```
+
+```
+2. Create a .env file and add the following api keys.
+
+```sh
+
+
+
+```
+3. Run cargo build
+```sh
+
+```
+
+4. Run the Axum Api
+```
+
+```
+
+5. Open you postman and follow the test format.
+**Note:**Use the json body type to send the request as the body type is strict.
+```
+{
+   "message":"<Your Message>",
+    "name":"<Any Name>",
+    "media":"<Any Media name>"
+}
+
+```
 
 ## Accessibility
 
