@@ -52,23 +52,34 @@ Sei Orcinus is an agentic api for getting real time crypto data on sei network.
 **Productivity Hack Tips:**
 >*As a user, I will definitely make sei orcinus my daily sidekid for anything on sei ecosystem knowing I have everything I need to be productive in one api endpoint which I can integrate to any of my favourite workspace, social media platform or dashboard platform🤔*
 
+4. ### Onchain data Fetching:
+Sei Orcinus api operates onchain and off-chain. Apart from fetching off-chain market data, You can use Sei orcinus to get onchain information of wallets, smart contracts, NFTs and NFT tokens.
+
+**Experience:**
+>*Users don't have to follow a structural prompt or technique to index data. Just express yourself and Sei Orcinus knows what to do!*
+
 
 
 ## Demo
 The following images show case a real demo test of using sei orcinus agentic api.
 
+1. **Getting a specific token balance for a wallet**
 <p align="center">
   <img src="./public/sei_orcinus_test_01.png" alt="Agent Image" width="800" style="max-width: 100%;">
 </p>
 
+
+2. **Getting the real-time market price or capitalization of a token or multiple tokens**
 <p align="center">
   <img src="./public/sei_orcinus_test_02.png" alt="Agent Image" width="800" style="max-width: 100%;">
 </p>
 
+3. **Knowing what a particular address is on Sei Mainnet Network** 
 <p align="center">
   <img src="./public/sei_orcinus_test.png" alt="Agent Image" width="800" style="max-width: 100%;">
 </p>
 
+4. **Getting balance of an address or multiple address**
 <p align="center">
   <img src="./public/sei_orcinus_test_advanced_test.png" alt="Agent Image" width="800" style="max-width: 100%;">
 </p>
