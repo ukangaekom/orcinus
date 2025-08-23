@@ -1,7 +1,9 @@
 # Sei Orcinus 🐋
 
 
+<p align="center">
   <img src="./public/sei_orcinus.jpg" alt="Agent Image" width="400" style="max-width: 100%; border-radius:100%">
+</p>
 
 
 
