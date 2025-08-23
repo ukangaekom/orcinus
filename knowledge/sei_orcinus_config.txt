@@ -302,6 +302,16 @@ $GLOBAL_CRYPTOCURRENCY_DATABASE = ```SEARCH FOR ALL THE CRYPTO CURRENCIES WE HAV
     
 }
 
+<STORE>
+TOKEN_TO_ADDRESS_KNOWLEDGE_BASE:{
+
+  'SEI':'',
+  
+
+
+}
+<STORE/>
+
 
 
 +++++++++++++++++++++++++++++++++++++ TOKEN KNOWLEDGE BASE ENDS++++++++++++++++++++++++++++++++++++
@@ -360,10 +370,8 @@ You: [get_marketcap, <TOKEN_NAME>]
 {
 
   'get_token_details_mainnet':'This function is ONLY returned when a user prompts to get the detail of a tokens or a token i.e The function takes in only token contract addresses as parameter',
-  'get_token_balance_mainnet':'This functin is ONLY returned when a user prompts to get the token balance of a particular wallet. i.e The function takes in the token contract address and the wallet address as parameters'
-  
-
-
+  'get_token_balance_mainnet':'This functin is ONLY returned when a user prompts to get the token balance of a particular wallet. i.e The function takes in the token contract address and the wallet address as parameters',
+  'get_native_balance':'This function takes in wallet address, contract address to return the amount of sei blockchain native token they have. i.e The function takes in the token contract address or the wallet address as parameters'
 }
 
 
@@ -380,6 +388,9 @@ User: Check the balances of the token address 0x06eFdBFf2a14a7c8E15944D1F4A48F9F
 You:
 [get_token_balance_mainnet, 0x06eFdBFf2a14a7c8E15944D1F4A48F9F95F663A4, 0xDb7608614dfdD9feBFC1b82A7609420fa7B3Bc34, 0x74B7da0c6D1C063aB31c09A1D899AbbAFbA2612b, 0x0D05a7D3448512B78fa8A9e46c4872C88C4a0D05, 0x1aA298Ae7c53D8DAFA200ED49608649BFA76a446]
 
+User: What is the balance of Sei in this wallet 0x8a50dC735814248d84d5dA162A0d4D692d7B7E6f?
+You: [get_native_balance,  0x8a50dC735814248d84d5dA162A0d4D692d7B7E6f]
+
 <THINK/>
 
 ===================================== TOKEN TOOLS ENDS ====================================================
@@ -395,9 +406,30 @@ You:
 
 ====================================== NFT TOOL BEGINS ====================================================
 {
-
+  'get_nft_balance_mainnet':'This function is ONLY returned when a user prompts to get the detail of an NFT tokens e.g ERC721 and ERC1155 tokens. i.e The function takes in NFT token address as the first parameter and the address or addresses as the rest of the parameter.',
+  'get_nft_details_mainnet':'This function ONLY returns when a user prompts to get details of NFT tokens. i.e The function takes in NFT token address or addresses as parameters.',
+  'get_nft_total_supply':'This function ONLY returns when a user prompts to get the total supply of NFT tokens. i.e The function takes in NFT tokens address or addresses as parameters.',
 
 }
+
+
+<THINK>
+
+User: what is the nft balance of the wallet address 0x4DfB54cA7053c40fBa2C4AF713d8c583fE735686 for the NFT address 0x26d4461aFA7334E945071727751e156ff5a55D8f?
+You: [get_nft_balance_mainnet, 0x26d4461aFA7334E945071727751e156ff5a55D8f, 0x4DfB54cA7053c40fBa2C4AF713d8c583fE735686]
+
+User: Using the NFT token address 0x26d4461aFA7334E945071727751e156ff5a55D8f as reference, check the balances of the following address? 0x5f18F39eFd115383d8Fcda6CFD507AE9C798c5C2, 0xaaB38Eadf584a4C449Dc206c5c5BbC5f2a2755c8, 0xDF89DA025c8fc44Ff41834Cb5e21699BD1B22bB4 and 0x8b30250A6C4BE965EBF0f6999Bb1e26363d2BC28.
+You:
+    [get_nft_balance_mainnet, 0x26d4461aFA7334E945071727751e156ff5a55D8f, 0x5f18F39eFd115383d8Fcda6CFD507AE9C798c5C2, 0xaaB38Eadf584a4C449Dc206c5c5BbC5f2a2755c8, 0xDF89DA025c8fc44Ff41834Cb5e21699BD1B22bB4, 0x8b30250A6C4BE965EBF0f6999Bb1e26363d2BC28]
+
+User: What is the total NFT supply for 0x815168946948065538eD1D70197b9A4B9F13125f?
+You: [get_nft_total_supply, 0x815168946948065538eD1D70197b9A4B9F13125f]
+
+User: Get me the details for the following NFTs? 0x815168946948065538eD1D70197b9A4B9F13125f, 0x3c65291C5f05Dc767E14E81bd367ab63448D7808, 0x65964F8eC3c4AfF6D7750871C7EdcA106684021f.
+You: [get_nft_details_mainnet, 0x815168946948065538eD1D70197b9A4B9F13125f, 0x3c65291C5f05Dc767E14E81bd367ab63448D7808, 0x65964F8eC3c4AfF6D7750871C7EdcA106684021f]
+
+<THINK/>
+
 
 ===================================== NFT TOOLS ENDS ====================================================
 

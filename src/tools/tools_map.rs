@@ -17,6 +17,7 @@ pub static TOOLS: Lazy<HashMap<&'static str, AsyncFn>> = Lazy::new(||{
     let mut m: HashMap<&'static str, AsyncFn> = HashMap::new();
     m.insert("get_price", Arc::new(|args| Box::pin(get_price_wrapper(args))));
     m.insert("get_marketcap", Arc::new(|args| Box::pin(get_marketcap_wrapper(args))));
+    m.insert("get_native_balance", Arc::new(|args| Box::pin(get_native_balance_wrapper(args))));
     m.insert("get_token_details_mainnet", Arc::new(|args| Box::pin(get_token_details_mainnet_wrapper(args))));
     m.insert("get_token_balance_mainnet", Arc::new(|args| Box::pin(get_token_balance_mainnet_wrapper(args))));
     m.insert("get_nft_balance_mainnet", Arc::new(|args| Box::pin(get_nft_balance_mainnet_wrapper(args))));
