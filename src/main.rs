@@ -11,6 +11,7 @@ use axum::{
     Router
 };
 use tokio::net::TcpListener;
+use tower_http::cors::{CorsLayer, Any};
 
 
 
@@ -20,9 +21,19 @@ use tokio::net::TcpListener;
 async fn main(){
     dotenv_flow::dotenv_flow().ok();
 
+    // Define CORS layer
+    /*
+    This endpoint is free for now as it's in demo and testing phase
+    */
+    let cors = CorsLayer::new()
+        .allow_origin(Any) // 👈 Allow requests from any domain
+        .allow_methods([Method::Get, Method::Post])
+        .allow_headers(Any);
+
     // Axum router 
-    let router_sei_orcinus: Router = Router::new().route("/sei_orcinus_agent",
-    post(request));
+    let router_sei_orcinus: Router = Router::new()
+        .route("/sei_orcinus_agent",post(request))
+        .layer(cors); 
 
 
     // Define Ip and Port
