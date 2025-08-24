@@ -27,7 +27,7 @@ async fn main(){
     */
     let cors = CorsLayer::new()
         .allow_origin(Any) // 👈 Allow requests from any domain
-        .allow_methods([Method::Get, Method::Post])
+        .allow_methods(Any)
         .allow_headers(Any);
 
     // Axum router 
