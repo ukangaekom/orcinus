@@ -1,6 +1,5 @@
 # Sei Orcinus 🐋
 
-
 <p align="center">
   <img src="./public/sei_orcinus.jpg" alt="Agent Image" width="400" style="max-width: 100%; border-radius:100%">
 </p>
@@ -31,6 +30,43 @@ Sei Orcinus is an agentic api for getting real time crypto data on sei network.
 <p align="center">
   <img src="./public/SOA.jpg" alt="Agent Image" width="800" style="max-width: 100%;">
 </p>
+The Archictecutral diagram describe the process of data flow of data from request to response in Sei Orcinus. The following are the meaning of the abbreviations in the architecture.
+
+```
+1. PA - Processing Agent
+2. RA - Report Agent
+3. PA KB - Processing Agent Knowledgebase
+4. RA KB - Report Agent Knowledgebase
+5. Tool Mapper - A dynamic runntime Hashmap that holds all supported tool functions.
+6. AI model - Google Gemini AI model
+```
+
+### Project Structure
+structure in the `src` file.
+```
+.
+├── agents
+│   ├── mod.rs
+│   ├── processing_agent.rs
+│   └── report_agent.rs
+├── connection
+│   ├── client.rs
+│   ├── mod.rs
+│   └── provider.rs
+├── main.rs
+├── mod.rs
+├── response.rs
+├── services
+│   ├── getter
+│   └── mod.rs
+├── structure.txt
+└── tools
+    ├── mod.rs
+    ├── tools_map.rs
+    ├── utils.rs
+    └── wrappers
+```
+
 
 ## Usecase
 1. ### Explorers🌐🔍: 
