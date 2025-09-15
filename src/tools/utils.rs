@@ -1,5 +1,7 @@
 use alloy::{providers::Provider,
 primitives::Address,sol};
+use regex::Regex;
+use once_cell::sync::Lazy;
 
 sol! {
     #[sol(rpc)]
@@ -7,6 +9,26 @@ sol! {
         function supportsInterface(bytes4 interfaceId) external view returns (bool);
     }
 }
+
+
+
+// REGEX
+static RE: Lazy<Regex> = Lazy::new(||Regex::new(r"\[([^\]]+)]").unwrap());
+
+
+pub fn destructor_task(response_text: &str) -> Vec<String>{
+
+    let tool_calls: Vec<String> = RE.find_iter(response_text)
+        .map(|caps| {
+            caps.as_str()
+            .chars().filter(|&c| c != '\n' && c != ' ')
+            .collect()})
+        .collect();
+
+    return tool_calls;
+
+}
+
 
 
 // FUNCTION IMPLEMENTATIONS

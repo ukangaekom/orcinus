@@ -16,7 +16,6 @@ use tower_http::cors::{CorsLayer, Any};
 
 
 
-
 #[tokio::main]
 async fn main(){
     dotenv_flow::dotenv_flow().ok();

@@ -21,6 +21,7 @@
 
 ## Introduction
 Sei Orcinus is an agentic api for getting real time crypto data on sei network.
+We are simply building the next performance ready AI infrastructure on Sei used every way, anyway and at any time. Users can now access any realtime data on Sei at their convenient zone and platforms thanks to our agentic api. 
 
 
 ## About
@@ -121,6 +122,14 @@ The following images show case a real demo test of using sei orcinus agentic api
 </p>
 
 
+### Advanced Future
+
+1. **Ability to Multi Task**
+<p align="center">
+  <img src="./public/sei_orcinus_multitasking.png" alt="Agent Image" width="800" style="max-width: 100%;">
+</p>
+
+
 ## Testing
 To run Sei Orcinus locally, simply clone the git repo, set your gemini api key and alchemy api key before  running  `cargo build --release` and `cargo run --release`
 ### steps
@@ -148,7 +157,7 @@ To run Sei Orcinus locally, simply clone the git repo, set your gemini api key a
 ```
 
 5. Open you postman and follow the test format.
-Go to you local postman use the endpoint `http://localhost:8080/sei_orcinus_agent` and use a post request method.
+Go to you local postman use the endpoint `http://localhost:8080/sei_orcinus_agent` and use a `post` request method.
 
 **Note:** Use the json body type to send the request as the body type is strict.
 ```
@@ -169,15 +178,16 @@ Regarding Sei Orcinus Api accessibility, The api has been officially launched. Y
 ## Team
 
 [Ekomabasi Ukanga](https://x.com/EkomUkanga) - Owner
-
-[Victor Lawrence]()
-
+[Charles Ukanga](https://x.com/)
+[Victor Lawrence](https://x.com/)
 [Philemon Ndifreke](https://x.com/JohnPhilemon01) - Media/BD Manager
 
 
 
 
 ## Links
+[website](https://seiorcinus.vercel.app/)
+[x_social_media](https://x.com/SeiOrcinus)
 
 
 

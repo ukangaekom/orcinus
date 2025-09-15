@@ -28,5 +28,4 @@ once_cell = "1.21.3"
 alloy = "1.0.23"
 futures = "0.3.31"
 tower-http = {version="0.6.6", features=["cors"]}
-
-
+regex = "1.11.2"
