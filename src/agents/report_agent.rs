@@ -25,7 +25,7 @@ pub async fn report_result(_text:&str) -> Option<std::string::String> {
         ChatMessage::user(_text)
     ]);
 
-    let model: &str = "gemini-2.0-flash";
+    let model: &str = "gemini-2.5-flash";
 
     let chat_res = client.exec_chat(model, chat_req, None).await;
 
