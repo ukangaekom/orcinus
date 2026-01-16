@@ -29,7 +29,7 @@ pub async fn request(Json(query):Json<Prompt>) -> Json<Respond>{
 
     if agent_tasks.is_empty(){
         return Json::from(
-        Respond{output:process})
+        Respond{output:process});
 
     }
 

@@ -29,6 +29,10 @@ pub async fn report_result(_text:&str) -> Option<std::string::String> {
 
     let chat_res = client.exec_chat(model, chat_req, None).await;
 
-    chat_res.expect("REASON").content_text_into_string()
+    let answer = chat_res.expect("REASON").content_text_into_string();
+
+    // println!("{}",&answer.clone().unwrap_or_default());
+
+    return answer
     
 }
